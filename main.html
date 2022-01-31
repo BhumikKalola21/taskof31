@@ -1,0 +1,187 @@
+<html>
+    <head>
+        <title>Signup Form</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <style>
+            .btn-color {
+                background-color: #253657;
+                color: #fff;
+            }
+
+            .profile-image-pic {
+                height: 200px;
+                width: 200px;
+                object-fit: cover;
+            }
+
+            .cardbody-color {
+                background-color: #3ba1bb;
+            }
+
+            a {
+                text-decoration: none;
+            }
+        </style>
+        <script>
+            var list1 = [];
+            var list2 = [];
+            var list3 = [];
+            var list4 = [];
+            var list5 = [];
+            var list6 = [];
+
+            var Checkbox = document.getElementsByName("check");
+
+            var n = 1;
+            var x = 0;
+
+            function submit() {
+                var newRow = document.getElementById("table");
+
+                var addrow = newRow.insertRow(n);
+
+                var str = " ";
+                for (var n of Checkbox) {
+                    if (n.checked) {
+                        str += n.value + " ";
+                    }
+                }
+                // console.log(str);
+                list1[x] = document.getElementById("email").value;
+                list2[x] = document.getElementById("password").value;
+                if (male.checked) {
+                    list3[x] = document.getElementById("male").value;
+                } else if (female.checked) {
+                    list3[x] = document.getElementById("female").value;
+                }
+                list4[x] = document.getElementById("technology").value;
+
+                var cell1 = addrow.insertCell(0);
+                var cell2 = addrow.insertCell(1);
+                var cell3 = addrow.insertCell(2);
+                var cell4 = addrow.insertCell(3);
+                var cell5 = addrow.insertCell(4);
+
+                cell1.innerHTML = list1[x];
+                cell2.innerHTML = list2[x];
+                cell3.innerHTML = list3[x];
+                cell4.innerHTML = list4[x];
+                cell5.innerHTML = str;
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <h2 class="text-center text-dark mt-5">Login Form</h2>
+                    <div class="card my-5">
+                        <form class="card-body cardbody-color p-lg-5">
+                            <div class="text-center">
+                                <img
+                                    src="https://image.freepik.com/free-vector/illustration-young-man-with-greeting-gesture-man-says-hello-vector_310063-114.jpg"
+                                    class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                                    width="200px"
+                                    alt="profile"
+                                />
+                            </div>
+
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="email" placeholder="User Name" />
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control" id="password" placeholder="password" />
+                            </div>
+                            <div class="mb-3">
+                                <label class="px-0" for="male">Male</label>
+                                <input type="radio" value="male" id="male" />
+                                <label class="px-0" for="female">Female</label>
+                                <input type="radio" value="female" id="female" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="hobby" name="hobby">Technology</label>
+                                <select class="px-5" name="hobby" id="technology">
+                                    <option value="Vue js">vue js</option>
+                                    <option value="ROR">ROR</option>
+                                    <option value="Node">Node</option>
+                                </select>
+                            </div>
+                            <div class="mb-3 form-group form-check">
+                                <input type="checkbox" class="form-check-input" name="checkbox" id="exampleCheck1" />
+                                <label class="form-check-label" for="exampleCheck1">Remeber</label>
+                            </div>
+                            <div class="text-center"><button onclick="pass();alert('click event fire and your data is successfully added below')" type="button" class="btn btn-color px-5 mb-5 w-100">Login</button></div>
+                        </form>
+                        <div class="container">
+                            <table class="container tab" id="table">
+                                <thead>
+                                    <tr class="tr">
+                                        <th class="th">Email</th>
+                                        <th class="th">password</th>
+                                        <th class="th">Gender</th>
+                                        <th class="th">Technology</th>
+                                        <th class="th">Checkbox</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var list1 = [];
+            var list2 = [];
+            var list3 = [];
+            var list4 = [];
+            var list5 = [];
+
+            var Checkbox = document.getElementsByName("check");
+
+            var fill = 1;
+            var co = 0;
+
+            function pass() {
+                var newRow = document.getElementById("table");
+
+                var addrow = newRow.insertRow(n);
+
+                var str = " ";
+                for (var fill of Checkbox) {
+                    if (fill.checked) {
+                        str += n.value + " ";
+                    }
+                }
+
+                list1[co] = document.getElementById("email").value;
+                list2[co] = document.getElementById("password").value;
+                if (male.checked) {
+                    list3[co] = document.getElementById("male").value;
+                } else if (female.checked) {
+                    list3[co] = document.getElementById("female").value;
+                }
+                list4[x] = document.getElementById("technology").value;
+
+                list5[x] = document.getElementById("exampleCheck1").value;
+                var cell1 = addrow.insertCell(0);
+                var cell2 = addrow.insertCell(1);
+                var cell3 = addrow.insertCell(2);
+                var cell4 = addrow.insertCell(3);
+                var cell5 = addrow.insertCell(4);
+                var cell6 = addrow.insertCell(5);
+
+                cell1.innerHTML = list1[co];
+                cell2.innerHTML = list2[co];
+                cell3.innerHTML = list3[co];
+                cell4.innerHTML = list4[co];
+                cell5.innerHTML = list5[co];
+                cell6.innerHTML = str;
+            }
+        </script>
+    </body>
+</html>
